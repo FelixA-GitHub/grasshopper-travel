@@ -1,10 +1,11 @@
-const { Session } = require('express-session');
+//dependencies
 const User = require('./User');
+const Post = require('./Post');
+const Description = require('./Description');
+const Search = require('./Search');
 
 
 //associations
 
 
-module.exports = {
-  User
-};
+module.exports = { User, Post, Description, Search };
