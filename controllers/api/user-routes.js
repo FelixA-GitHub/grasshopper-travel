@@ -1,10 +1,25 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Post, Description, Search } = require('../../models');
+
+//GET all /api/user/
+router.get('/', (req, res) => {
+  User.findAll({
+    attributes: { exclude: ['password'] }
+  })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+//GET single user /api/user/:id
 
 //POST /api/user/
 router.post('/', (req, res) => {
   User.create({
     username: req.body.username,
+    email: req.body.email,
     password: req.body.password
   })
     .then(dbUserData => {
@@ -26,7 +41,8 @@ router.post('/', (req, res) => {
 router.post('/login', (req, res) => {
   User.findOne({
     where: {
-      username: req.body.username
+      username: req.body.username,
+      password: req.body.password
     }
   }).then(dbUserData => {
     if (!dbUserData) {
