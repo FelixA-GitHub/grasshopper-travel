@@ -1,0 +1,30 @@
+  <h2>Post a Job</h2>
+<section class="form-box">
+  <form class="new-post-form">
+    <div>
+      <label for="post-title">Job Title</label>
+      <input type="text" id="post-title" name="post-title" />
+    </div>
+    <div>
+      <label for="description">Description</label>
+      <input type="text" id="post-content" name="description" />
+    </div>
+    <button type="submit" class="btn" id="submit"><a href="/">Submit</button>
+  </form>
+</section>
+
+{{!-- {{#if posts.length}}
+  <h2>Your Posts</h2>
+  <section class="form-box">
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+      <a href="/employee/edit/{{post.id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}} --}}
+
+<script src="/javascript/add-post.js"></script>

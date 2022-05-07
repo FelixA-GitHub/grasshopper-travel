@@ -11,11 +11,13 @@
       <nav>
         <a href="/" class="nav-link">Home</a>
      
-        {{!-- <a href="/dashboard" class="nav-link">Dashboard</a> --}}
-        {{#if loggedIn}}
+        <a href="/Employer" class="nav-link">Employer</a>
+        {{#if employerloggedIn}}
         <button id="logout" class="btn-no-style">Logout</button>
-        {{else}}
-        <a href="/login">Login</a>
+        {{/if}}
+        <a href="/Consultant" class="nav-link">Consultant</a>
+        {{#if consultantloggedIn}}
+        <button id="logout" class="btn-no-style">Logout</button>
         {{/if}}
       </nav>
       
