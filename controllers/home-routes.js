@@ -11,6 +11,11 @@ router.get("/employer", (req, res) => {
       ?  res.render("employer")
       : res.redirect('/login')
 });
+router.get("/consultant", (req, res) => {
+  req.session.consultantLoggedIn
+      ?  res.render("consultant")
+      : res.redirect('/login')
+});
 
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
@@ -20,12 +25,12 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.get("/register", (req, res) => {
-  // put res.render line here
-});
+// router.get("/register", (req, res) => {
+//   // put res.render line here
+// });
 
-router.get("/home", (req, res) => {
-  // put res.render line here
-});
+// router.get("/home", (req, res) => {
+//   // put res.render line here
+// });
 
 module.exports = router;

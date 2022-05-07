@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
       req.session.save(() => {
         req.session.userId = dbUserData.id;
         req.session.username = dbUserData.username;
-        req.session.loggedIn = true;
+        req.session.employerloggedIn = true;
 
         res.json(dbUserData);
       });
