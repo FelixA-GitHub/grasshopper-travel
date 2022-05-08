@@ -2,7 +2,7 @@
 
 # User Story
 
-A website dedicated to traveling medical professional whereby they can search and apply for short-term assignments in a different city. Employers can post jobs as well.
+A website dedicated to traveling medical professionals whereby they can search and apply for short-term assignments in different cities. Employers can post jobs as well.
 
 # Acceptable Criteria
 
@@ -45,7 +45,7 @@ https://github.com/FelixA-GitHub
 
 # Contributors
 
-- Ashley Lawrence
+- Ashley Lawrence|ashdmt39@gmail.com
 - Corey Motte
 - Felix Acevedo
 
