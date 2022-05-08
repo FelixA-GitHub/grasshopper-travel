@@ -1,16 +1,16 @@
-const router = require('express').Router();
-const sequelize = require('../../config/connection');
-const { Post, User, Description, Search } = require('../../models');
-const withAuth = require('../../utils/auth');
+// const router = require('express').Router();
+// const sequelize = require('../../config/connection');
+// const { Post, Consultant, Description, Search } = require('../../models');
+// const withAuth = require('../../utils/auth');
 
-// get all users
+// // get all users
 
-// get single by id
+// // get single by id
 
-// post 
+// // post 
 
-// put
+// // put
 
-// delete
+// // delete
 
-module.exports = router;
+// module.exports = router;
