@@ -18,12 +18,16 @@ Job.init(
         len: [1]
       }
     },
+    location: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     job_description: {
       type: DataTypes.TEXT,
       allowNull: false
     },
     salary: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     job_type: {
