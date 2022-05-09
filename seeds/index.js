@@ -1,23 +1,23 @@
-const seedUsers = require('./user-seeds');
-const seedPosts = require('./post-seeds');
-const seedDescription = require('./description-seeds');
-const seedSearch = require('./search-seeds');
+const seedConsultants = require('./consultant-seeds');
+// const seedPosts = require('./post-seeds');
+const seedJobs = require('./job-seeds');
+const seedEmployers = require('./employer-seeds');
 
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
   console.log('--------------');
-  await seedUsers();
+  await seedConsultants();
   console.log('--------------');
 
-  await seedPosts();
+  // await seedPosts();
+  // console.log('--------------');
+
+  await seedJobs();
   console.log('--------------');
 
-  await seedDescription();
-  console.log('--------------');
-
-  await seedSearch();
+  await seedEmployers();
   console.log('--------------');
 
   process.exit(0);

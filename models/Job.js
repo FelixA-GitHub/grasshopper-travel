@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Description extends Model {}
+class Job extends Model {}
 
-Description.init(
+Job.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,24 +11,44 @@ Description.init(
       primaryKey: true,
       autoIncrement: true
     },
-    description_text: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    user_id: {
+    job_description: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
+    salary: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    job_type: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    duration: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    post_date: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    employer_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: 'employer',
         key: 'id'
       }
     },
-    post_id: {
+    consultant_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'post',
+        model: 'consultant',
         key: 'id'
       }
     }
@@ -37,8 +57,8 @@ Description.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'description'
+    modelName: 'job'
   }
 );
 
-module.exports = Description;
+module.exports = Job;

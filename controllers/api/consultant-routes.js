@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
   Consultant.findAll({
     attributes: { exclude: ['password'] }
   })
-    .then(dbUserData => res.json(dbUserData))
+    .then(dbConsultantData => res.json(dbConsultantData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -22,13 +22,13 @@ router.post('/', (req, res) => {
     email: req.body.email,
     password: req.body.password
   })
-    .then(dbUserData => {
+    .then(dbConsultantData => {
       req.session.save(() => {
-        req.session.userId = dbUserData.id;
-        req.session.username = dbUserData.username;
-        req.session.consultantloggedIn = true;
+        req.session.consultantId = dbConsultantData.id;
+        req.session.username = dbConsultantData.username;
+        req.session.loggedIn = true;
 
-        res.json(dbUserData);
+        res.json(dbConsultantData);
       });
     })
     .catch(err => {
@@ -44,13 +44,13 @@ router.post('/login', (req, res) => {
       username: req.body.username,
       password: req.body.password
     }
-  }).then(dbUserData => {
-    if (!dbUserData) {
+  }).then(dbConsultantData => {
+    if (!dbConsultantData) {
       res.status(400).json({ message: 'No user account found!' });
       return;
     }
 
-    const validPassword = dbUserData.checkPassword(req.body.password);
+    const validPassword = dbConsultantData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res.status(400).json({ message: 'Incorrect password!' });
@@ -58,11 +58,11 @@ router.post('/login', (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.userId = dbUserData.id;
-      req.session.username = dbUserData.username;
-      req.session.consultantloggedIn = true;
+      req.session.consultantId = dbConsultantData.id;
+      req.session.username = dbConsultantData.username;
+      req.session.loggedIn = true;
 
-      res.json({ user: dbUserData, message: 'You are now logged in!' });
+      res.json({ user: dbConsultantData, message: 'You are now logged in!' });
     });
   });
 });

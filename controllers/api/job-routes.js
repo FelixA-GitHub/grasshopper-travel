@@ -1,6 +1,6 @@
 //dependencies
 const router = require('express').Router();
-const { Description } = require('../../models');
+const { Job } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //get all descriptions

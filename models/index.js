@@ -1,11 +1,11 @@
 //dependencies
-const User = require('./User');
+const Consultant = require('./Consultant');
+const Employer = require('./Employer');
 const Post = require('./Post');
-const Description = require('./Description');
-const Search = require('./Search');
+const Job = require('./Job');
 
 
 //associations
 
 
-module.exports = { User, Post, Description, Search };
+module.exports = { Consultant, Post, Job, Employer };
