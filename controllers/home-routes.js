@@ -3,18 +3,15 @@ const { User } = require("../models/");
 
 // homepage
 router.get("/", (req, res) => {
-  res.render("home");
+  res.render("home", { loggedIn : req.session.loggedIn });
 });
 
 router.get("/login", (req, res) => {
-  req.session.loggedIn
-    ? res.redirect("/dashboard")
-    : res.redirect("/login")
-  res.render("login");
+  res.render("login", { loggedIn : req.session.loggedIn });
 });
 
 router.get("/dashboard", (req, res) => {
-  res.render("dashboard");
+  res.render("dashboard", { loggedIn : req.session.loggedIn });
 });
 
 module.exports = router;
