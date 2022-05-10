@@ -1,1 +1,9 @@
-This is a dashboard
+<div>
+    <p>This is a dashboard</p>
+    {{#if session.consultant}}
+        <p>You are a consultant</p>
+    {{/if}}
+    {{#if session.employer}}
+        <p>You are an employer</p>
+    {{/if}}
+</div>

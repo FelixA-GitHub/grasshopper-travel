@@ -16,7 +16,6 @@ async function signupFormHandler(event) {
   }
 
   if (username && email && password && role) {
-    console.log(role);
     const response = await fetch('/api/user/', {
       method: 'POST',
       body: JSON.stringify({

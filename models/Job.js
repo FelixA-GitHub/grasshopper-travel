@@ -41,6 +41,9 @@ Job.init(
     post_date: {
       type: DataTypes.DATE,
       allowNull: false
+    },
+    created_by: {
+      type: DataTypes.INTEGER
     }
   },
   {

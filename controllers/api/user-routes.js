@@ -28,7 +28,6 @@ router.post('/', (req, res) => {
 
 // POST /api/user/login
 router.post('/login', (req, res) => {
-  console.log(req.body);
   User.findOne({
     where: {
       username: req.body.username
@@ -49,6 +48,8 @@ router.post('/login', (req, res) => {
     req.session.save(() => {
       req.session.userId = dbUserData.id;
       req.session.username = dbUserData.username;
+      req.session.consultant = dbUserData.role === "consultant";
+      req.session.employer = dbUserData.role === "employer";
       req.session.loggedIn = true;
 
       res.json({ user: dbUserData, message: 'You are now logged in!' });
