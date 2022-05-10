@@ -1,9 +1,14 @@
-<div>
-    <p>This is a dashboard</p>
-    {{#if session.consultant}}
-        <p>You are a consultant</p>
+<div class="hero is-primary is-small has-background-link">
+
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h2 class="title is-2 has-text-white">Dashboard</h2>
+      {{#if session.consultant}}
+        <p class="has-text-weight-light">Consultant</p>
     {{/if}}
     {{#if session.employer}}
-        <p>You are an employer</p>
+        <p class="has-text-weight-light">Employer</p>
     {{/if}}
+    </div>
+  </div>
 </div>
