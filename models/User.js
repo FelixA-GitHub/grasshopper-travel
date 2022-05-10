@@ -1,16 +1,16 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');
+const sequelize = require('../config/config');
 
 // create our User model
-class Employer extends Model {
-  // set up method to run on instance data (per Employer) to check password
+class User extends Model {
+  // set up method to run on instance data (per user) to check password
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
-Employer.init(
+User.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -22,40 +22,37 @@ Employer.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isEmail: true
-      }
-    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [4]
       }
+    },
+    role: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   },
   {
     hooks: {
       // set up beforeCreate lifecycle "hook" functionality
-      async beforeCreate(newEmployerData) {
-        newEmployerData.password = await bcrypt.hash(newEmployerData.password, 10);
-        return newEmployerData;
+      async beforeCreate(newUserData) {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
       },
 
-      async beforeUpdate(updatedEmployerData) {
-        updatedEmployerData.password = await bcrypt.hash(updatedEmployerData.password, 10);
-        return updatedEmployerData;
+      async beforeUpdate(updatedUserData) {
+        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        return updatedUserData;
       }
     },
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'employer'
+    modelName: 'User'
   }
 );
 
-module.exports = Employer;
+module.exports = User;

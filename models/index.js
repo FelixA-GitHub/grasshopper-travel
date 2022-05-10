@@ -1,11 +1,5 @@
-//dependencies
-const Consultant = require('./Consultant');
-const Employer = require('./Employer');
-const Post = require('./Post');
-const Job = require('./Job');
+const User = require('./User');
 
-
-//associations
-
-
-module.exports = { Consultant, Post, Job, Employer };
+module.exports = {
+  User
+};

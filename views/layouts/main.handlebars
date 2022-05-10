@@ -11,12 +11,8 @@
       <nav>
         <a href="/" class="nav-link">Home</a>
      
-        <a href="/Employer" class="nav-link">Employer</a>
-        {{#if employerloggedIn}}
-        <button id="logout" class="btn-no-style">Logout</button>
-        {{/if}}
-        <a href="/Consultant" class="nav-link">Consultant</a>
-        {{#if consultantloggedIn}}
+        <a href="/login" class="nav-link">Login</a>
+        {{#if loggedIn}}
         <button id="logout" class="btn-no-style">Logout</button>
         {{/if}}
       </nav>
