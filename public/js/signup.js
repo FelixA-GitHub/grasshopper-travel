@@ -5,10 +5,18 @@ async function signupFormHandler(event) {
   const username = document.querySelector('#username-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
+  const radioButtons = document.querySelectorAll('input[name="role"]');
+  let role;
 
-  const role = 1;
+  for (const radioButton of radioButtons) {
+    if (radioButton.checked) {
+        role = radioButton.value;
+        break;
+    }
+  }
 
-  if (username && email && password) {
+  if (username && email && password && role) {
+    console.log(role);
     const response = await fetch('/api/user/', {
       method: 'POST',
       body: JSON.stringify({
