@@ -29,9 +29,11 @@ User.init(
         len: [4]
       }
     },
+    email: {
+      type: DataTypes.STRING
+    },
     role: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type: DataTypes.STRING
     }
   },
   {
