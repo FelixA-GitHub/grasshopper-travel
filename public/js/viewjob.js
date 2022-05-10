@@ -1,14 +1,10 @@
-document.addEventListener('DOMContentLoaded', () => {
-    getJobById(2);
-})
+import { getJobById } from '../utils/job-api.js';
 
-async function getJobById(id) {
-    const response = await fetch(`/api/jobs/${id}`, {
-        method: 'GET',
-        headers: { 
-            'Content-Type': 'application/json',
-          }
-    })
-    const json = await response.json()
-    console.log(json.data);
-}
+document.addEventListener('DOMContentLoaded', async () => {
+    const location = window.location.pathname;
+    const split = location.split("/");
+    const currentJob = await getJobById(split[split.length - 1]);
+    console.log(currentJob);
+
+    // write code to generate html based on currentJob
+})

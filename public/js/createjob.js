@@ -1,3 +1,5 @@
+import { createJob } from '../utils/job-api.js';
+
 //(PLACEHOLDER) function to gather form data and call our "POST /api/user/login" express route
 const loginFormHandler = async function (event) {
     event.preventDefault();
@@ -10,28 +12,11 @@ const loginFormHandler = async function (event) {
     const duration = document.querySelector('#job-duration').value.trim();
   
     if (title && location && description && salary && type && duration) {
-     
-      const response = await fetch('/api/jobs/create/', {
-        method: 'POST',
-        body: JSON.stringify({
-          title,
-          location,
-          description,
-          salary,
-          type,
-          duration
-        }),
-        headers: { 
-          'Content-Type': 'application/json',
-        }
+      createJob(title, location, description, salary, type, duration)
+      .then(job => {
+        document.location.replace(`/job/${job.id}`);
       });
-  
-      if (response.ok) {
-        // document.location.replace('/dashboard');
-        console.log("Job posted!");
-      } else {
-        alert(response.statusText);
-      }
+
     }
   
   };
