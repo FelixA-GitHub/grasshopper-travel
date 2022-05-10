@@ -14,4 +14,8 @@ router.get("/dashboard", (req, res) => {
   res.render("dashboard", { session : req.session });
 });
 
+router.get("/register", (req, res) => {
+  res.render("register", { session : req.session });
+});
+
 module.exports = router;

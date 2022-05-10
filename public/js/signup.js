@@ -16,6 +16,7 @@ async function signupFormHandler(event) {
   }
 
   if (username && email && password && role) {
+    console.log(username);
     const response = await fetch('/api/user/', {
       method: 'POST',
       body: JSON.stringify({
@@ -28,11 +29,12 @@ async function signupFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
     }
   }
 }
 
+console.log('firing');
 document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
