@@ -3,14 +3,14 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Regal Care, Inc.</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
+    <a class="navbar-item" href="/">
       <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
     </a>
 
@@ -23,10 +23,6 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a href="/" class="navbar-item">
-        Home
-      </a>
-
       {{#if session.loggedIn}}
         <a href="/dashboard" class="navbar-item">
           Dashboard
@@ -92,5 +88,6 @@
 </body>
 
 <script src="/js/logout.js"></script>
+<script src="/js/main.js"></script>
 
 </html>
