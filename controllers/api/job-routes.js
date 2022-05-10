@@ -23,6 +23,7 @@ router.post('/create', async (req, res) => {
     }
 });
 
+// GET api/jobs/:id
 router.get('/:id', async (req, res) => {
     try {
         const job = await Job.findOne({
@@ -30,10 +31,12 @@ router.get('/:id', async (req, res) => {
                 id: req.params.id
             }
         });
-        res.status(200).json(job);
+        console.log(job.dataValues);
+        return res.status(200).json({data: job.dataValues});
     }
     catch (err) {
-
+        console.log(err);
+        res.status(400).json(err);
     }
 });
 
