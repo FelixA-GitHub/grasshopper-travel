@@ -12,7 +12,7 @@
         <a href="/" class="nav-link">Home</a>
      
         <a href="/login" class="nav-link">Login</a>
-        {{#if loggedIn}}
+        {{#if session.loggedIn}}
         <button id="logout" class="btn-no-style">Logout</button>
         {{/if}}
       </nav>

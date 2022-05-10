@@ -13,8 +13,10 @@ router.post('/', (req, res) => {
       req.session.save(() => {
         req.session.userId = dbUserData.id;
         req.session.username = dbUserData.username;
+        req.session.consultant = dbUserData.role === "consultant";
+        req.session.employer = dbUserData.role === "employer";
         req.session.loggedIn = true;
-
+        
         res.json(dbUserData);
       });
     })

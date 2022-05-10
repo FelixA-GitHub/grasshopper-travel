@@ -9,7 +9,7 @@ function logout() {
   })
     .then(function () {
       //return to the homepage route
-      document.location.replace("/");
+      document.location.replace("/login");
     })
     .catch(err => console.log(err));
 }
