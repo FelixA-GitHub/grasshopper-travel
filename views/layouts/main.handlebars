@@ -7,7 +7,69 @@
   <title>Regal Care, Inc.</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
-<div class="wrapper">
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a href="/" class="navbar-item">
+        Home
+      </a>
+
+      {{#if session.loggedIn}}
+        <a href="/dashboard" class="navbar-item">
+          Dashboard
+        </a>
+      {{/if}}
+
+      {{#if session.employer}}
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Employer
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item">
+              My Postings
+            </a> 
+          </div>
+        </div>
+      {{/if}}
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          {{#if session.loggedIn}}
+            <a id="logout-btn" class="button is-light">
+              Log out
+            </a>
+          {{else}}
+          <a class="button is-primary">
+            <strong>Sign up</strong>
+          </a>
+          <a href="/login" class="button is-light">
+            Log in
+          </a>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+{{!-- <div class="wrapper">
     <header>
       <nav>
         <a href="/" class="nav-link">Home</a>
@@ -22,7 +84,7 @@
         <h1>Regal Care, Inc.</h1>
       </div>
     </header>
-<body>
+<body> --}}
 
   <main>
     {{{body}}}

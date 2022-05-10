@@ -1,4 +1,4 @@
-const button = document.getElementById("logout");
+const button = document.getElementById("logout-btn");
 
 //We can call this function from our frontend to log out of the current session
 function logout() {
