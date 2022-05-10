@@ -14,11 +14,11 @@ const jobdata = [
     {
       title: 'Physical Therapist - Skilled!',
       location: 'Laconia, NH',
-      job_description: 'Crunch & Munch Rehab is a dynamic speech pathology, occupational and physical therapy private practice in the Lake Norman areas of Mooresville, Statesville and Denver, NC. We are seeking full time, hourly or contract, NC licensed, or eligible, physical therapists to serve in our Mooresville and Denver clinics.',
+      job_description: 'Remarkable SNF is looking for a highly motivated and energetic therapist to join the team. Candidates must be willing to support a friendly, positive and professional environment.',
       salary: '$1,500 - $1,800/Weekly Pay',
       job_type: 'Contract',
       duration: '13 weeks',
-      post_date: '05/01/2022'
+      post_date: '05/05/2022'
     },
     {
       title: 'Physical Therapist - Acute',
@@ -30,13 +30,13 @@ const jobdata = [
       post_date: '04/28/2022'
     },
     {
-      title: 'Physical Therapist Needed ASAP!',
-      location: 'Mooresville, NC',
-      job_description: 'Crunch & Munch Rehab is a dynamic speech pathology, occupational and physical therapy private practice in the Lake Norman areas of Mooresville, Statesville and Denver, NC. We are seeking full time, hourly or contract, NC licensed, or eligible, physical therapists to serve in our Mooresville and Denver clinics.',
-      salary: '$80,000',
+      title: 'Physical Therapist - Rehabilitation',
+      location: 'Avalon, CA',
+      job_description: 'ChaCha Rehab is a private, physical therapist owned practice in Avalon, CA. We pride ourselves on our longevity in the area, with this summer marking our 23rd anniversary!',
+      salary: '$1,900/Weekly Pay',
       job_type: 'Contract',
       duration: '13 weeks',
-      post_date: '05/01/2022'
+      post_date: '04/30/2022'
     },
     {
       title: 'Physical Therapist Needed ASAP!',
@@ -49,9 +49,9 @@ const jobdata = [
     },
     {
       title: 'Physical Therapist Needed ASAP!',
-      location: 'Mooresville, NC',
+      location: 'Los Angeles, CA',
       job_description: 'Crunch & Munch Rehab is a dynamic speech pathology, occupational and physical therapy private practice in the Lake Norman areas of Mooresville, Statesville and Denver, NC. We are seeking full time, hourly or contract, NC licensed, or eligible, physical therapists to serve in our Mooresville and Denver clinics.',
-      salary: '$80,000',
+      salary: '$60,000 - $90,000',
       job_type: 'Contract',
       duration: '13 weeks',
       post_date: '05/01/2022'
