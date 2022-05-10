@@ -15,7 +15,8 @@ router.post('/create', async (req, res) => {
             created_by: req.session.userId,
             post_date: new Date()
         })
-        res.status(200).json(newJob);
+        console.log(newJob.dataValues.id);
+        return res.status(200).json(newJob);
     }
     catch (err) {
         console.log(err);
