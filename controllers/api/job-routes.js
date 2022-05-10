@@ -3,7 +3,6 @@ const { Job, User } = require('../../models');
 
 //POST api/jobs/create/
 router.post('/create', async (req, res) => {
-    console.log(req.body);
     try {
         const newJob = await Job.create({
             title: req.body.title,
@@ -15,7 +14,6 @@ router.post('/create', async (req, res) => {
             created_by: req.session.userId,
             post_date: new Date()
         })
-        console.log(newJob.dataValues.id);
         return res.status(200).json(newJob);
     }
     catch (err) {
@@ -32,7 +30,6 @@ router.get('/:id', async (req, res) => {
                 id: req.params.id
             }
         });
-        console.log(job.dataValues);
         return res.status(200).json({data: job.dataValues});
     }
     catch (err) {
