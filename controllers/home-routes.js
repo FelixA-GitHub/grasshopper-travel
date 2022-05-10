@@ -18,4 +18,8 @@ router.get("/register", (req, res) => {
   res.render("register", { session : req.session });
 });
 
+router.get("/create", (req, res) => {
+  res.render("createlisting", { session: req.session });
+});
+
 module.exports = router;
