@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 const sequelize = require('../config/connection');
 const { Job } = require('../models');
+=======
+const sequelize = require('../config/config');
+const { Job, Post } = require('../models');
+>>>>>>> 7c8ee4643d7c79a7dfbb3bbe5a8153306a806a57
 
 const jobdata = [
     {
