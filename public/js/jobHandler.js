@@ -1,4 +1,4 @@
-fetch("/api/jobs")
+fetch("/api/jobs/")
   .then((res) => res.json())
   .then((data) => {
     dataArr = data;

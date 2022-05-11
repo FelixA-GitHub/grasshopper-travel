@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // write code to generate html based on currentJob
 })
-// this needs to show full job by id when title is clicked
+// this needs to show job by id when title is clicked
 // fetch("/api/jobs")
 //   .then((res) => res.json())
 //   .then((data) => {
 //     dataArr = data;
 
 //     data.forEach((job) => {
-//       document.querySelector(".jobContainer").innerHTML += `
+//       document.querySelector(".JobContainer").innerHTML += `
       
 //       <form>
 //       <input type="hidden" name="avatar_url" id="${job.title}" class="simple-file-upload"> 
