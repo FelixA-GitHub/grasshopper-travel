@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log(currentJob);
 
     // write code to generate html based on currentJob
+    let cont = document.getElementById("container");
+    let title = document.createElement("p");
+    let desc = document.createElement("p");
+    title.textContent = currentJob.title;
+    desc.textContent = currentJob.job_description;
+    cont.appendChild(title);
+    cont.appendChild(desc);
 })
 // this needs to show job by id when title is clicked
 // fetch("/api/jobs")
