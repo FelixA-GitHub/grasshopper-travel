@@ -1,10 +1,5 @@
-<<<<<<< HEAD:seeds/consultant-seeds.js
 const sequelize = require('../config/connection');
 const { Consultant } = require('../models');
-=======
-const sequelize = require('../config/config');
-const { User, Post } = require('../models');
->>>>>>> 7c8ee4643d7c79a7dfbb3bbe5a8153306a806a57:seeds/user-seeds.js
 
 const userdata = [
     {

@@ -1,0 +1,14 @@
+
+.jobContainer {
+    margin: 10vh;
+}
+
+.jobCard {
+    margin: 20px 5px;
+    border-top: 4px solid rgb(3, 167, 249);
+}
+
+.jobCard h2 {
+    font-weight: bold;
+
+}
