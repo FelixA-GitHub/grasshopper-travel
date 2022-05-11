@@ -1,6 +1,33 @@
 const router = require('express').Router();
 const { Job, User } = require('../../models');
 
+// GET all api/jobs/
+router.get('/', async (req, res) => {
+    console.log('======================');
+    await Job.findAll()
+        .then(dbJobData => res.json(dbJobData))
+        .catch(err => {
+            console.logL(err);
+            res.status(500).json(err);
+        });
+});
+
+// GET api/jobs/:id
+router.get('/:id', async (req, res) => {
+    try {
+        const job = await Job.findOne({
+            where: {
+                id: req.params.id
+            }
+        });
+        return res.status(200).json({data: job.dataValues});
+    }
+    catch (err) {
+        console.log(err);
+        res.status(400).json(err);
+    }
+});
+
 //POST api/jobs/create/
 router.post('/create', async (req, res) => {
     try {
@@ -22,20 +49,5 @@ router.post('/create', async (req, res) => {
     }
 });
 
-// GET api/jobs/:id
-router.get('/:id', async (req, res) => {
-    try {
-        const job = await Job.findOne({
-            where: {
-                id: req.params.id
-            }
-        });
-        return res.status(200).json({data: job.dataValues});
-    }
-    catch (err) {
-        console.log(err);
-        res.status(400).json(err);
-    }
-});
 
 module.exports = router;
