@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 const sequelize = require('../config/connection');
 const { Job } = require('../models');
-=======
-const sequelize = require('../config/config');
-const { Job, Post } = require('../models');
->>>>>>> 7c8ee4643d7c79a7dfbb3bbe5a8153306a806a57
 
 const jobdata = [
     {
@@ -29,7 +24,7 @@ const jobdata = [
       title: 'Physical Therapist - Acute',
       location: 'Richmond, VA',
       job_description: 'FredFlint Travelers, an YabbaDoo Healthcare company, is the leader in allied healthcare staffing. Our relationships with numerous healthcare facilities - including hospitals, home health agencies, school systems, and long-term care facilities - enable us to offer the most current temporary therapy positions and medical imaging jobs. And our traveler customer service is among the best in the industry. YabbaDoo Healthcare is an EEO/AA/Disability/Protected Veteran Employer.  We encourage minority and female applicants to apply.',
-      salary: '$1750-$1850 Weekly',
+      salary: '$1,750-$1,850 Weekly',
       job_type: 'Contract',
       duration: '13 weeks',
       post_date: '04/28/2022'
@@ -92,7 +87,7 @@ const jobdata = [
       title: 'Travel Physical Therapist',
       location: 'Chicago, IL',
       job_description: 'At RightSaidFredMed, our aim is to be the last company you ever work with. We prove it, too, with the highest compensation, first day medical benefits, a best in industry 401(K) retirement plan, and fiduciary services offered through Creative Planning. You will have low fee, low cost funds such as Vanguard and a variety of other investment selections that will help you reach financial security and ultimately, financial freedom! We don’t just deliver a dream for your assignment, we want you to live your dream without the need to work!',
-      salary: '$2770.40 Per Week',
+      salary: '$2,770.40 Per Week',
       job_type: 'Contract',
       duration: '13 weeks',
       post_date: '04/24/2022'
