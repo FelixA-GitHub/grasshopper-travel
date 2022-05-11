@@ -49,5 +49,46 @@ router.post('/create', async (req, res) => {
     }
 });
 
+// UPDATE job by id api/job/:id
+router.put('/:id', (req, res) => {
+    // pass in req.body instead to only update what's passed through
+    Job.update(req.body, {
+      individualHooks: true,
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(dbJobData => {
+        if (!dbJobData) {
+          res.status(404).json({ message: 'No job found with this id' });
+          return;
+        }
+        res.json(dbJobData);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+  
+  // DELETE job by id api/job/:id
+  router.delete('/:id', (req, res) => {
+    Job.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(dbJobData => {
+        if (!dbJobData) {
+          res.status(404).json({ message: 'No job found with this id' });
+          return;
+        }
+        res.json(dbJobData);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
 
 module.exports = router;
