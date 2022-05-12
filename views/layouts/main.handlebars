@@ -47,6 +47,20 @@
           </div>
         </div>
       {{/if}}
+
+      {{#if session.consultant}}
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Consultant
+          </a>
+
+          <div class="navbar-dropdown">
+            <a href="/my-apps/" class="navbar-item">
+              View Submitted Applications
+            </a> 
+          </div>
+        </div>
+      {{/if}}
     </div>
 
     <div class="navbar-end">

@@ -38,6 +38,14 @@ router.get("/createdjobs/:id", (req, res) => {
   res.render("createdjobs", { session : req.session });
 });
 
+router.get("/my-apps", (req, res) => {
+  res.redirect(`/my-apps/${req.session.userId}`);
+});
+
+router.get("/my-apps/:id", (req, res) => {
+  res.render("myapplications", { session : req.session });
+});
+
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
