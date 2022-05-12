@@ -6,7 +6,7 @@ const userdata = [
       username: 'alesmonde0',
       password: 'password123',
       email: 'nwestnedge0@cbc.ca',
-      role: 'consultant'
+      role: 'employer'
     },
     {
       username: 'jwilloughway1',
