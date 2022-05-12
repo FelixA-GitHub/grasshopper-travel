@@ -8,8 +8,13 @@
 </div>
 
 <div class="wrapper" id="container">
-    <div class="box has-text-centered" id="job-posting">
+    <div class="box has-text-centered">
         {{!-- HTML is being generated here in viewjob.js --}}
+        <div id="job-posting"></div>
+        {{#if session.consultant}}
+        <button class="button is-normal is-success" id="apply-button">Apply Now</button>
+        {{/if}}
+        <button class="button is-normal" id="back-button">Back to Dashboard</button>
     </div>
 </div>
 
