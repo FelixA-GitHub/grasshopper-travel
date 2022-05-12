@@ -1,12 +1,12 @@
 const sequelize = require('../config/connection');
-const { Consultant } = require('../models');
+const { User } = require('../models');
 
 const userdata = [
     {
       username: 'alesmonde0',
       password: 'password123',
       email: 'nwestnedge0@cbc.ca',
-      role: 'consultant'
+      role: 'employer'
     },
     {
       username: 'jwilloughway1',

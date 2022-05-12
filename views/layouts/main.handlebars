@@ -41,6 +41,23 @@
             <a href="/create" class="navbar-item">
               Create Listing
             </a> 
+            <a href="/createdjobs/" class="navbar-item">
+              View Posted Jobs
+            </a> 
+          </div>
+        </div>
+      {{/if}}
+
+      {{#if session.consultant}}
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Consultant
+          </a>
+
+          <div class="navbar-dropdown">
+            <a href="/my-apps/" class="navbar-item">
+              View Submitted Applications
+            </a> 
           </div>
         </div>
       {{/if}}
@@ -89,7 +106,7 @@
   </main>
 </body>
 
-{{!-- <script src="/js/logout.js"></script> --}}
+<script src="/js/logout.js"></script>
 <script src="/js/main.js"></script>
 
 </html>

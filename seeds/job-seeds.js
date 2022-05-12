@@ -9,7 +9,8 @@ const jobdata = [
       salary: '$80,000',
       job_type: 'Contract',
       duration: '13 weeks',
-      post_date: '05/01/2022'
+      post_date: '05/01/2022',
+      created_by: 1
     },
     {
       title: 'Physical Therapist - Skilled!',
@@ -18,7 +19,8 @@ const jobdata = [
       salary: '$1,500 - $1,800/Weekly Pay',
       job_type: 'Contract',
       duration: '13 weeks',
-      post_date: '05/05/2022'
+      post_date: '05/05/2022',
+      created_by: 1
     },
     {
       title: 'Physical Therapist - Acute',
@@ -27,7 +29,8 @@ const jobdata = [
       salary: '$1,750-$1,850 Weekly',
       job_type: 'Contract',
       duration: '13 weeks',
-      post_date: '04/28/2022'
+      post_date: '04/28/2022',
+      created_by: 1
     },
     {
       title: 'Physical Therapist - Rehabilitation',
@@ -36,7 +39,8 @@ const jobdata = [
       salary: '$1,900/Weekly Pay',
       job_type: 'Contract',
       duration: '13 weeks',
-      post_date: '04/30/2022'
+      post_date: '04/30/2022',
+      created_by: 1
     },
     {
       title: 'Physical Therapist - Pediatric Clinic ',
@@ -45,7 +49,8 @@ const jobdata = [
       salary: '$62.4K - $79K estimated',
       job_type: 'Contract',
       duration: '13 weeks',
-      post_date: '04/21/2022'
+      post_date: '04/21/2022',
+      created_by: 5
     },
     {
       title: 'Physical Therapist - Adult Outpatient',
@@ -54,7 +59,8 @@ const jobdata = [
       salary: '$69.9K - $88.5K estimated',
       job_type: 'Contract',
       duration: '13 weeks',
-      post_date: '05/02/2022'
+      post_date: '05/02/2022',
+      created_by: 6
     },
     {
       title: 'Physical Therapist - PT',
@@ -63,7 +69,8 @@ const jobdata = [
       salary: 'Inquire, Paid Weekly',
       job_type: 'Contract',
       duration: '13 weeks',
-      post_date: '05/09/2022'
+      post_date: '05/09/2022',
+      created_by: 7
     },
     {
       title: 'Pediatric Physical Therapist or Assistant',
@@ -72,7 +79,8 @@ const jobdata = [
       salary: 'Up to $100,000 a year',
       job_type: 'Contract',
       duration: '13 weeks',
-      post_date: '05/06/2022'
+      post_date: '05/06/2022',
+      created_by: 8
     },
     {
       title: 'Physical Therapist - Inpatient Rehab',
@@ -81,7 +89,8 @@ const jobdata = [
       salary: 'Up to $2,242 a week',
       job_type: 'Contract',
       duration: '13 weeks',
-      post_date: '05/07/2022'
+      post_date: '05/07/2022',
+      created_by: 9
     },
     {
       title: 'Travel Physical Therapist',
@@ -90,7 +99,8 @@ const jobdata = [
       salary: '$2,770.40 Per Week',
       job_type: 'Contract',
       duration: '13 weeks',
-      post_date: '04/24/2022'
+      post_date: '04/24/2022',
+      created_by: 10
     },
 ];
   
