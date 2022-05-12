@@ -15,8 +15,9 @@ function getJobs() {
         .then((res) => res.json())
         .then((data) => {
             data.forEach((job) => {
+                // insert HTML to generate for each job below
                 document.getElementById("job-container").innerHTML += `
-                ${job.title}
+                
                 `;
             });
         });
