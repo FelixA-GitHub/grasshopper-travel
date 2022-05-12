@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     applyButton.addEventListener("click", function () {
-        document.location.replace(`/application`);
+        document.location.replace(`/application/${currentJob.id}`);
     });
 })
 

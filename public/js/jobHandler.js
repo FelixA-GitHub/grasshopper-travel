@@ -4,18 +4,26 @@ fetch("/api/jobs/")
     dataArr = data;
 
     data.forEach((job) => {
-      document.querySelector(".jobContainer").innerHTML += `
-      
-      <form>
-      <input type="hidden" name="avatar_url" id="${job.title}" class="simple-file-upload"> 
-  </form>
-  
-            <div class="jobCard">
-             <a href="/job/${job.id}">   <h2>${job.title}</h2> </a>
-                <p> ${job.location} | ${job.duration} | ${job.salary}</p>
+      document.getElementById("job-container").innerHTML += `
+                <div class="pb-4">
+                    <div class="card">
 
-                <p> ${job.job_description}</p>
-            </div>
+                        <header class="card-header">
+                            <p class="card-header-title">${job.title}</p>
+                        </header>
+
+                        <div class="card-content">
+                            <div class="content">
+                                ${job.job_description}
+                            </div>
+                        </div>
+
+                        <footer class="card-footer">
+                            <a href="/job/${job.id}" class="card-footer-item">More Details</a>
+                            <a href="/application/${job.id}" class="card-footer-item"><p class="has-text-success">Apply Now</p></a>
+                        </footer>
+                    </div>
+                </div>
         `;
     });
   });

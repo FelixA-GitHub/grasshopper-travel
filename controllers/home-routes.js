@@ -26,7 +26,7 @@ router.get("/job/:id", (req, res) => {
   res.render("viewlisting", { session : req.session });
 });
 
-router.get("/application", (req, res) => {
+router.get("/application/:id", (req, res) => {
   res.render("application", { session : req.session });
 });
 
