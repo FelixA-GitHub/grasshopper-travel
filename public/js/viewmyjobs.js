@@ -1,20 +1,23 @@
 let userId;
+let postedJobs;
 
 document.addEventListener('DOMContentLoaded', async () => {
+    //gets the user ID from the url on page load
     const location = window.location.pathname;
     const split = location.split("/");
     userId = split[split.length - 1];
-    console.log(userId);
-    
+    getJobs();
 })
 
 function getJobs() {
+    // send get request to API with user ID to get list of jobs they created
     fetch(`/api/jobs/query/${userId}`)
         .then((res) => res.json())
         .then((data) => {
-            console.log(data);
+            data.forEach((job) => {
+                document.getElementById("job-container").innerHTML += `
+                ${job.title}
+                `;
+            });
         });
 }
-
-var button = document.getElementById("find-jobs");
-button.addEventListener("click", getJobs);
