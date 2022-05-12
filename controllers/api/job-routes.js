@@ -105,20 +105,5 @@ router.get('/query/:id', (req, res) => {
     });
 });
 
-//   router.get('/query', async (req, res) => {
-//     try {
-//         const job = await Job.findAll({
-//             where: {
-//                 created_by: req.session.userId
-//             }
-//         });
-//         return res.status(200).json(job);
-//     }
-//     catch (err) {
-//         console.log(err);
-//         res.status(400).json(err);
-//     }
-// });
-
 
 module.exports = router;

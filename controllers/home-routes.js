@@ -31,6 +31,10 @@ router.get("/application", (req, res) => {
 });
 
 router.get("/createdjobs", (req, res) => {
+  res.redirect(`/createdjobs/${req.session.userId}`);
+});
+
+router.get("/createdjobs/:id", (req, res) => {
   res.render("createdjobs", { session : req.session });
 });
 
