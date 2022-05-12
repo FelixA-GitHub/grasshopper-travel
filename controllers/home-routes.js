@@ -30,6 +30,10 @@ router.get("/application", (req, res) => {
   res.render("application", { session : req.session });
 });
 
+router.get("/createdjobs", (req, res) => {
+  res.render("createdjobs", { session : req.session });
+});
+
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {

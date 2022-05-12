@@ -1,0 +1,15 @@
+<button class="button" id="find-jobs">Get my jobs</button>
+
+<script>
+
+    function getJobs() {
+        fetch("/api/jobs/query/12")
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+            });
+    }
+
+    var button = document.getElementById("find-jobs");
+    button.addEventListener("click", getJobs);
+</script>

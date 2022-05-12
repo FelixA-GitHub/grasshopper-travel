@@ -11,7 +11,7 @@ fetch("/api/jobs/")
   </form>
   
             <div class="jobCard">
-             <a href="/application">   <h2>${job.title}</h2> </a>
+             <a href="/job/${job.id}">   <h2>${job.title}</h2> </a>
                 <p> ${job.location} | ${job.duration} | ${job.salary}</p>
 
                 <p> ${job.job_description}</p>
