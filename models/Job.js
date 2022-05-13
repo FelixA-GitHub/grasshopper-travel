@@ -39,7 +39,7 @@ Job.init(
       allowNull: false
     },
     post_date: {
-      type: DataTypes.DATE
+      type: DataTypes.DATEONLY
     },
     created_by: {
       type: DataTypes.INTEGER
