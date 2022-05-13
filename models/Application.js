@@ -25,7 +25,20 @@ Application.init(
                 key: 'id'
             }
         },
-
+        job_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'job',
+                key: 'id'
+            }
+        }
+    },
+    {
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'application'
     }
+);
 
-)
+module.exports = Application;
