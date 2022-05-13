@@ -15,4 +15,4 @@ async function deleteFormHandler(event) {
   }
 }
 
-document.querySelector('.card-footer-item').addEventListener('click', deleteFormHandler);
+document.querySelector('.card-footer-item').addEventListener('delete', deleteFormHandler);
