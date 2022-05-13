@@ -20,7 +20,6 @@ fetch("/api/jobs/")
 
                         <footer class="card-footer">
                             <a href="/job/${job.id}" class="card-footer-item">More Details</a>
-                            <a href="/application/${job.id}" class="card-footer-item"><p class="has-text-success">Apply Now</p></a>
                         </footer>
                     </div>
                 </div>

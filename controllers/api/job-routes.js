@@ -49,7 +49,7 @@ router.post('/create', async (req, res) => {
   }
 });
 
-// UPDATE job by id api/job/:id
+// UPDATE job by id api/jobs/:id
 router.put('/:id', (req, res) => {
   // pass in req.body instead to only update what's passed through
   Job.update(req.body, {
@@ -71,7 +71,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-// DELETE job by id api/job/:id
+// DELETE job by id api/jobs/:id
 router.delete('/:id', (req, res) => {
   Job.destroy({
     where: {

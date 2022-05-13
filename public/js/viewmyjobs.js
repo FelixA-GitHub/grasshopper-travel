@@ -9,6 +9,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     getJobs();
 })
 
+async function deleteJob(id) {
+    await fetch(`/api/jobs/${id}`, {
+        method: 'DELETE'
+    });
+}
+
 function getJobs() {
     // send get request to API with user ID to get list of jobs they created
     fetch(`/api/jobs/query/${userId}`)
@@ -16,8 +22,10 @@ function getJobs() {
         .then((data) => {
             data.forEach((job) => {
                 // insert HTML to generate for each job below
-                document.getElementById("job-container").innerHTML += `
-                <div class="pb-4">
+                const jobContainer = document.getElementById("job-container");
+                const jobCard = document.createElement("div");
+                jobCard.setAttribute("class", "pb-4");
+                jobCard.innerHTML = `
                     <div class="card">
 
                         <header class="card-header">
@@ -32,11 +40,21 @@ function getJobs() {
 
                         <footer class="card-footer">
                             <a href="/edit/${job.id}" class="card-footer-item">Edit</a>
-                            <a class="card-footer-item">Delete</a>
+                            <button id="delete-btn-${job.id}" value="${job.id}" class="card-footer-item button">Delete</button>
                         </footer>
                     </div>
-                </div>
                 `;
+                jobContainer.appendChild(jobCard);
+
+                deleteBtn = document.getElementById(`delete-btn-${job.id}`);
+                deleteBtn.addEventListener("click", async (e) => {
+                    await fetch(`/api/jobs/${e.target.value}`, {
+                    method: 'DELETE'
+                    });
+                    alert("Job deleted");
+                    window.location.replace("/createdjobs");
+                    
+                });
             });
         });
 }
