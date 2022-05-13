@@ -31,8 +31,8 @@ function getJobs() {
                         </div>
 
                         <footer class="card-footer">
-                            <a href="#" class="card-footer-item">Edit</a>
-                            <a href="#" class="card-footer-item">Delete</a>
+                            <a href="/edit/${job.id}" class="card-footer-item">Edit</a>
+                            <a class="card-footer-item">Delete</a>
                         </footer>
                     </div>
                 </div>

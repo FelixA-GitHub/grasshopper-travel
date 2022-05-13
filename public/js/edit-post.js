@@ -1,28 +1,23 @@
-async function editFormHandler(event) {
-  event.preventDefault();
+import { getJobById } from '../utils/job-api.js';
 
-  const title = document.querySelector('input[name="job-title"]').value.trim();
-  const description = document.querySelector('input[name="job-description"]').value.trim();
-  const id = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1
-  ];
-  const response = await fetch(`/api/jobs/${id}`, {
-    method: 'PUT',
-    body: JSON.stringify({
-      title,
-      description,
-      // description: comment
-    }),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  });
+let jobTitle = document.getElementById("job-title");
+let jobLocation = document.getElementById("job-location");
+let jobDescription = document.getElementById("job-description");
+let jobSalary = document.getElementById("job-salary");
+let jobType = document.getElementById("job-type");
+let jobDuration = document.getElementById("job-duration");
 
-  if (response.ok) {
-    document.location.replace('/createdjobs/');
-  } else {
-    alert(response.statusText);
-  }
-}
+document.addEventListener('DOMContentLoaded', async () => {
+    //gets the user ID from the url on page load
+    const location = window.location.pathname;
+    const split = location.split("/");
+    const currentJob = await getJobById(split[split.length - 1]);
+    
+    jobTitle.value = currentJob.title;
+    jobLocation.value = currentJob.location;
+    jobDescription.value = currentJob.job_description;
+    jobSalary.value = currentJob.salary;
+    jobType.value = currentJob.job_type;
+    jobDuration.value = currentJob.duration;
+})
 
-document.querySelector('.card-footer-item').addEventListener('edit', editFormHandler);

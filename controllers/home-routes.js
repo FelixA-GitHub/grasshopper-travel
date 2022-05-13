@@ -46,6 +46,10 @@ router.get("/my-apps/:id", (req, res) => {
   res.render("myapplications", { session : req.session });
 });
 
+router.get("/edit/:id", (req, res) => {
+  res.render("editlisting", { session : req.session })
+});
+
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
