@@ -1,0 +1,60 @@
+<div class="hero is-fullheight is-primary has-background-link">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-8 is-offset-2">
+        <h3 class="title has-text-white">Create Job Listing</h3>
+        <hr class="login-hr">
+    </div>
+
+    <div class="box">
+      <form class="posting-form">
+            <div class="field">
+            <div class="control">
+                <input id="job-title" class="input is-large" type="text" placeholder="Job Title" autofocus="">
+            </div>
+            </div>
+            <div class="field">
+            <div class="control">
+                <input id="job-location" class="input is-large" type="text" placeholder="Location" autofocus="">
+            </div>
+            </div>
+            <div class="field">
+            <div class="control">
+                <textarea id="job-description" class="textarea is-medium" placeholder="Job Description" autofocus=""></textarea>
+            </div>
+            </div>
+            <div class="field">
+            <div class="control">
+                <input id="job-salary" class="input is-large" type="text" placeholder="Salary" autofocus="">
+            </div>
+            </div>
+            <div class="field">
+            <div class="control">
+                <input id="job-type" class="input is-large" type="text" placeholder="Type" autofocus="">
+            </div>
+            </div>
+            <div class="field">
+            <div class="control">
+                <input id="job-duration" class="input is-large" type="text" placeholder="Duration" autofocus="">
+            </div>
+            </div>
+            <button type="submit" class="button is-block is-link is-light is-large is-fullwidth">Create</button>
+        </form>
+    </div>
+
+    
+  </div>
+</div>
+
+{{!-- <form class="posting-form">
+    <input type="text" id="job-title" placeholder="title"/>
+    <input type="text" id="job-location" placeholder="location"/>
+    <input type="text" id="job-description" placeholder="description"/>
+    <input type="text" id="job-salary" placeholder="salary"/>
+    <input type="text" id="job-type" placeholder="type"/>
+    <input type="text" id="job-duration" placeholder="duration"/>
+
+     <button type="submit">Submit</button>
+</form> --}}
+
+<script type="module" src="/js/createjob.js"></script>

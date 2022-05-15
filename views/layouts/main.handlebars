@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Regal Care, Inc.</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <script src="https://app.simplefileupload.com/buckets/e0ea886ee3aac659a71ffe78d0764a4c.js"></script>
+</head>
+
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="/assets/images/logo.png" width="112" height="28">
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      {{#if session.loggedIn}}
+        <a href="/dashboard" class="navbar-item">
+          Dashboard
+        </a>
+      {{/if}}
+
+      {{#if session.employer}}
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Employer
+          </a>
+
+          <div class="navbar-dropdown">
+            <a href="/create" class="navbar-item">
+              Create Listing
+            </a> 
+            <a href="/createdjobs/" class="navbar-item">
+              View Posted Jobs
+            </a> 
+          </div>
+        </div>
+      {{/if}}
+
+      {{#if session.consultant}}
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Consultant
+          </a>
+
+          <div class="navbar-dropdown">
+            <a href="/my-apps/" class="navbar-item">
+              View Submitted Applications
+            </a> 
+          </div>
+        </div>
+      {{/if}}
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          {{#if session.loggedIn}}
+            <a id="logout-btn" class="button is-light">
+              Log out
+            </a>
+          {{else}}
+          <a href="/register" class="button is-link is-primary">
+            <strong>Sign up</strong>
+          </a>
+          <a href="/login" class="button is-light">
+            Log in
+          </a>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+{{!-- <div class="wrapper">
+    <header>
+      <nav>
+        <a href="/" class="nav-link">Home</a>
+     
+        <a href="/login" class="nav-link">Login</a>
+        {{#if session.loggedIn}}
+        <button id="logout" class="btn-no-style">Logout</button>
+        {{/if}}
+      </nav>
+      
+      <div class="title-container">
+        <h1>Regal Care, Inc.</h1>
+      </div>
+    </header>
+<body> --}}
+
+  <main>
+    {{{body}}}
+  </main>
+</body>
+
+<script src="/js/logout.js"></script>
+<script src="/js/main.js"></script>
+
+</html>

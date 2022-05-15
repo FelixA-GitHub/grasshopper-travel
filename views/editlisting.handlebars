@@ -1,0 +1,51 @@
+<div class="hero is-fullheight is-primary has-background-link">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-8 is-offset-2">
+        <h3 class="title has-text-white">Modify Job Listing</h3>
+        <hr class="login-hr">
+    </div>
+
+    <div class="box">
+      <form class="posting-form">
+            <div class="field">
+            <div class="control">
+                <input id="job-title" class="input is-large" type="text" placeholder="Job Title" autofocus="">
+            </div>
+            </div>
+            <div class="field">
+            <div class="control">
+                <input id="job-location" class="input is-large" type="text" placeholder="Location" autofocus="">
+            </div>
+            </div>
+            <div class="field">
+            <div class="control">
+                <textarea id="job-description" class="textarea is-medium" placeholder="Job Description" autofocus=""></textarea>
+            </div>
+            </div>
+            <div class="field">
+            <div class="control">
+                <input id="job-salary" class="input is-large" type="text" placeholder="Salary" autofocus="">
+            </div>
+            </div>
+            <div class="field">
+            <div class="control">
+                <input id="job-type" class="input is-large" type="text" placeholder="Type" autofocus="">
+            </div>
+            </div>
+            <div class="field">
+            <div class="control">
+                <input id="job-duration" class="input is-large" type="text" placeholder="Duration" autofocus="">
+            </div>
+            </div>
+            <button type="button" id="save-btn" class="button is-block is-success is-large is-fullwidth mb-2">Save Changes</button>
+            <button type="button" id="cancel-btn" class="button is-block is-link is-light is-large is-fullwidth">Cancel</button>
+        </form>
+    </div>
+
+    
+  </div>
+</div>
+
+
+<script type="module" src="/js/edit-post.js"></script>

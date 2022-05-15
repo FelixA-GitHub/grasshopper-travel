@@ -1,0 +1,21 @@
+<div class="hero is-primary is-small has-background-link">
+
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h2 class="title is-2 has-text-white">Viewing Job</h2>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper" id="container">
+    <div class="box container has-text-centered">
+        {{!-- HTML is being generated here in viewjob.js --}}
+        <div id="job-posting"></div>
+        {{#if session.consultant}}
+        <button class="button is-normal is-success" id="apply-button">Apply Now</button>
+        {{/if}}
+        <button class="button is-normal" id="back-button">Back to Dashboard</button>
+    </div>
+</div>
+
+<script type="module" src="/js/viewjob.js"></script>

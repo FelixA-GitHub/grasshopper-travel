@@ -1,0 +1,48 @@
+<div class="hero is-fullheight is-primary has-background-link">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-8 is-offset-2">
+        <h3 class="title has-text-white">Registration</h3>
+        <hr class="login-hr">
+        <p class="subtitle has-text-white pb-4">Please enter your details below to register and start browsing jobs!</p>
+    </div>
+
+    <div class="box">
+        <form class="signup-form">
+            <div class="field">
+                <div class="control">
+                    <input id="username-signup" class="input is-large" type="text" placeholder="Username" autofocus="">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <input id="email-signup" class="input is-large" type="email" placeholder="Email" autofocus="">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <input id="password-signup" class="input is-large" type="password" placeholder="Password" autofocus="">
+                </div>
+            </div>
+            <div class="title has-text-grey is-5 pt-4">Please select your required access below:</div>
+            <div class="field pb-5">
+                <div class="control">
+                    <label class="radio">
+                        <input type="radio" id="consultant" name="role" value="consultant" checked>
+                        Consultant
+                    </label>
+                    <label class="radio">
+                        <input type="radio" id="employer" name="role" value="employer">
+                        Employer
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="button is-block is-link is-light is-large is-fullwidth">Sign Up</button>
+        </form>
+    </div>
+
+    
+  </div>
+</div>
+
+<script src="/js/signup.js"></script>
