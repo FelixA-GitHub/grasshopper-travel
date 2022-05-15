@@ -34,29 +34,20 @@ router.get('/:id', (req, res) => {
   });
 
 //POST /api/my-apps/
-// router.post('/', (req, res) => {
-//     User.create({
-//       username: req.body.username,
-//       password: req.body.password,
-//       email: req.body.email,
-//       role: req.body.role
-//     })
-//       .then(dbUserData => {
-//         req.session.save(() => {
-//           req.session.userId = dbUserData.id;
-//           req.session.username = dbUserData.username;
-//           req.session.consultant = dbUserData.role === "consultant";
-//           req.session.employer = dbUserData.role === "employer";
-//           req.session.loggedIn = true;
-  
-//           res.json(dbUserData);
-//         });
-//       })
-//       .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//       });
-//   });
+router.post('/', async (req, res) => {
+  try {
+    const newApp = await Application.create({
+      applied: true,
+      user_id: req.session.userId,
+      job_id: req.body.job_id
+    })
+    return res.status(200).json(newApp);
+  }
+  catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 // DELETE application by id api/my-apps/:id
 router.delete('/:id', (req, res) => {
