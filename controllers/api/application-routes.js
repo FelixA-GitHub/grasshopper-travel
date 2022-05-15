@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
         });
 });
 
-// GET single /api/application by id
+// GET single /api/my-apps by id
 router.get('/:id', (req, res) => {
     Application.findOne({
       attributes: { exclude: ['password'] },
