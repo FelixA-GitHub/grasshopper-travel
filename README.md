@@ -44,6 +44,7 @@ A website dedicated to traveling medical professional whereby they can search an
 
 https://github.com/Chlovanna
 https://github.com/FelixA-GitHub
+https://github.com/CoreyMotte
 
 # Contributors
 
