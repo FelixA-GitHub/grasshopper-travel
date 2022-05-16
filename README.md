@@ -1,7 +1,5 @@
-
-# grasshopper-travel
 # Regal Care, Inc.
-
+Interactive Full-Stack Project
 # User Story
 
 A website dedicated to traveling medical professional whereby they can search and apply for short-term assignments in different cities. Employers can post, edit, and delete jobs as well.
@@ -47,9 +45,9 @@ A website dedicated to traveling medical professional whereby they can search an
 
 # GitHub
 
-https://github.com/Chlovanna
-https://github.com/FelixA-GitHub
-https://github.com/CoreyMotte
+- https://github.com/Chlovanna
+- https://github.com/FelixA-GitHub
+- https://github.com/CoreyMotte
 
 # Contributors
 
