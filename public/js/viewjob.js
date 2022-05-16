@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         if (response.ok) {
-            // document.location.replace(`/application/${currentJob.id}`);
+            document.location.replace(`/application/${currentJob.id}`);
         } else {
             alert(response.statusText);
         }
