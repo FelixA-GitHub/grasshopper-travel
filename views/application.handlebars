@@ -10,17 +10,16 @@
   </div>
 </div>
 
-<h3>Please upload your resume!</h3>
+<div class="box container">
+  <h3 class="title has-text-centered">
+    Application submitted!
+  </h3>
 
-<form>
-    <input type="hidden" name="avatar_url" id="avatar_url" class="simple-file-upload"> 
-</form>  
+</div>
 
-{{!-- this job container should display only the job selected --}}
-{{!-- <div class="jobContainer"></div >
-<form>
-    <input type="hidden" name="avatar_url" id="avatar_url" class="simple-file-upload"> 
-</form> --}}
-
-{{!-- script below should be updated with js/viewjob.js --}}
-{{!-- <script src="js/jobHandler.js"></script> --}}
+<script>
+  window.setTimeout(function(){
+        // Move to a new location or you can do something else
+        document.location.replace(`/dashboard`);
+    }, 5000);
+</script>

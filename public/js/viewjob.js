@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // write code to generate html based on currentJob
     var content = document.getElementById("job-posting");
-    content.innerHTML = 
-    `<h3 class="title">${currentJob.title}</h3>
+    content.innerHTML =
+        `<h3 class="title">${currentJob.title}</h3>
     <hr></hr>
     <p class="m-5 is-size-5">${currentJob.job_description}</p>
     <p class="is-size-4">Salary: ${currentJob.salary}</p>
@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     <p class="is-size-6 pb-3">Duration: ${currentJob.duration}</p>
 
 
-    <p class="is-size-7 pb-5">Job posted: ${currentJob.post_date}</p>`
-    ;
+    <p class="is-size-7 pb-5">Job posted: ${currentJob.post_date}</p>`;
+    
     applyButton = document.getElementById("apply-button");
     backButton = document.getElementById("back-button");
 
@@ -30,8 +30,22 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.location.replace(`/dashboard`);
     });
 
-    applyButton.addEventListener("click", function () {
-        document.location.replace(`/application/${currentJob.id}`);
+    applyButton.addEventListener("click", async function () {
+        // document.location.replace(`/application/${currentJob.id}`);
+        console.log(currentJob);
+        const response = await fetch('/api/applications/', {
+            method: 'POST',
+            body: JSON.stringify({
+                job_id: currentJob.id
+            }),
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        if (response.ok) {
+            document.location.replace(`/application/${currentJob.id}`);
+        } else {
+            alert(response.statusText);
+        }
     });
 })
 
