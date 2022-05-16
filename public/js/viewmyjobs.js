@@ -1,4 +1,5 @@
 let userId;
+let jobApps;
 let postedJobs;
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -21,10 +22,11 @@ function getJobs() {
         .then((res) => res.json())
         .then((data) => {
             data.forEach((job) => {
+
                 // insert HTML to generate for each job below
                 const jobContainer = document.getElementById("job-container");
                 const jobCard = document.createElement("div");
-                jobCard.setAttribute("class", "pb-4");
+                jobCard.setAttribute("class", "pb-4 has-text-centered");
                 jobCard.innerHTML = `
                     <div class="card">
 
@@ -33,7 +35,7 @@ function getJobs() {
                         </header>
 
                         <div class="card-content">
-                            <div class="content">
+                            <div class="content" id="content-container">
                                 ${job.job_description}
                             </div>
                         </div>
@@ -45,6 +47,33 @@ function getJobs() {
                     </div>
                 `;
                 jobContainer.appendChild(jobCard);
+
+                const contentContainer = document.getElementById("content-container");
+                const appContent = document.createElement("div");
+                jobCard.innerHTML += "Applicants: "
+
+                fetch(`/api/applications/${job.id}`, {
+                    method: 'GET'
+                })
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data) {
+                        for (let i = 0; i < data.length; i++) {
+                            fetch(`/api/user/${data[i].user_id}`, {
+                                method: 'GET'
+                            })
+                            .then((res) => res.json())
+                            .then((data) => {
+                                let applicant = document.createElement("div");
+                                applicant.textContent = `${data.username}, ${data.email}`
+                                jobCard.appendChild(applicant);
+                            });
+                        }
+                    } else {
+                        appContent.textContent = "No current applications!"
+                    }
+                })
+                
 
                 deleteBtn = document.getElementById(`delete-btn-${job.id}`);
                 deleteBtn.addEventListener("click", async (e) => {

@@ -7,22 +7,22 @@ router.get('/', async (req, res) => {
     await Application.findAll()
         .then(dbApplicationData => res.json(dbApplicationData))
         .catch(err => {
-            console.logL(err);
+            console.log(err);
             res.status(500).json(err);
         });
 });
 
 // GET single /api/my-apps by id
 router.get('/:id', (req, res) => {
-    Application.findOne({
+    Application.findAll({
       attributes: { exclude: ['password'] },
       where: {
-        id: req.params.id
+        job_id: req.params.id
       }
     })
       .then(dbApplicationData => {
         if (!dbApplicationData) {
-          res.status(404).json({ message: 'No Application found with this id' });
+          res.status(404).json({ message: 'No Application found' });
           return;
         }
         res.json(dbApplicationData);
