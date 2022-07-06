@@ -29,9 +29,11 @@ A website dedicated to traveling medical professional whereby they can search an
 
 # Mock-up
 
--
+- ![alt text](https://github.com/FelixA-GitHub/grasshopper-travel/blob/main/assets/images/dash.jpeg)
 
 # Deployment
+
+https://regal-care-inc.herokuapp.com/
 
 # Tools used
 
@@ -47,9 +49,9 @@ A website dedicated to traveling medical professional whereby they can search an
 
 # GitHub
 
-https://github.com/Chlovanna
-https://github.com/FelixA-GitHub
-https://github.com/CoreyMotte
+- https://github.com/Chlovanna
+- https://github.com/FelixA-GitHub
+- https://github.com/CoreyMotte
 
 # Contributors
 
